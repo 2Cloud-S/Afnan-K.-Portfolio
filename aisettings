@@ -1,0 +1,34 @@
+export const aiSettings = {
+  // Chat settings
+  chat: {
+    model: "gpt-4", // or other model identifier
+    temperature: 0.7,
+    maxTokens: 2000,
+    presence_penalty: 0.6,
+    frequency_penalty: 0.6
+  },
+
+  // Content generation settings
+  content: {
+    defaultLanguage: "en",
+    tone: "professional",
+    maxLength: 500
+  },
+
+  // Integration settings
+  sanity: {
+    // Reference your existing Sanity config
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    // AI-specific Sanity settings
+    aiContentTypes: ["post", "project", "about"],
+    aiFieldTypes: ["text", "string", "array"]
+  },
+
+  // Rate limiting and safety
+  safety: {
+    maxRequestsPerMinute: 60,
+    maxTokensPerDay: 100000,
+    requiresAuthentication: true
+  }
+} 
